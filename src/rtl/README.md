@@ -11,8 +11,8 @@ all end up in [project root]/work
  Code Conventions
 -------------------------------------------------------------------------------  
 
-VHDL is not case sensitive, however all code should be in lower case and use
-underscores as spaces.
+VHDL is not case sensitive, however _all_ code (excluding constants) should be in lower case and use
+underscores as spaces. Constants should be written in the form: `MY_CONSTANT`
 
 Naming conventions for modules are:
 
