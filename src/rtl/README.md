@@ -36,14 +36,15 @@ This is a list of all RTL modules that are present within this source folder,
 along with the current status of their implementation.
 
 
-| Module Name | Port Declarations | RTL Implementd  | Verified
--------------------------------------------------------------------------------
-| adder_signed | no  | no  | no
-| mux_2bit   | no  | no  | no
-| ff_dtype  | no  | no  | no
-| ff_jk     |  no |  no | no
-|           |     |     | no
-| Please add more below | - | - | no
+| Module Name | Port Declarations | RTL Implemented  | Verified |
+|-------------|-------------------|------------------|----------|
+| adder_signed | no  | no  | no |
+| mux_2bit   | no  | no  | no |
+| ff_dtype  | no  | no  | no |
+| ff_jk     |  no |  no | no |
+|           |     |     |    |
+| Please add more below | - | - | no |
+
 
 Please try to keep this table up to date!
 
