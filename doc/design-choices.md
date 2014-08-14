@@ -11,10 +11,12 @@ chosing the main architecture of the machine.
 - ~~Harvard~~
 - Von Neuman
 
+
  A Von Neuman architecture will be easier to implement and allow for more 
 flexibility within the software.
 
- Machine Type
+
+Machine Type
 -------------------------------------------------------------------------------
 
   This will essentiall define how we structure the instruction set, along with
@@ -42,6 +44,7 @@ Considered Options:
    machine to have a larger area requirement.
 
 Main Design Constraints:
+-------------------------------------------------------------------------------
 
 - Gate/Area Count
   We have a finite number of gates/logic slices available that we
