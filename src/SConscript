@@ -1,0 +1,22 @@
+# vim: set ft=scons tw=72 ts=4 sw=4:
+import os.path
+
+def get_filename(env, source, target, for_signature):
+    assert len(target) == 1
+    target_without_extension = os.path.splitext(str(target[0]))[0]
+    print target_without_extension
+    vhdl_target = os.path.basename(target_without_extension)
+    objects = " ".join(object for object in map(lambda name:
+    os.path.splitext(str(name))[0] + ".o", source))
+    return ["ghdl -a $SOURCES", "ghdl -e %s" % (vhdl_target)]
+
+RTL = "rtl/"
+TEST_RTL = "test/rtl/"
+
+
+ghdl = Builder(generator = get_filename,
+               suffix='',
+               src_suffix=['.vhd', '.vhdl'])
+env = Environment(BUILDERS = {'Ghdl': ghdl})
+env.Ghdl(RTL+"mux_tb", [RTL+"mux.vhd", TEST_RTL+"mux_tb.vhd"])
+
