@@ -2,14 +2,12 @@
 -- @file mux.vhd
 -- @brief Simple implementation of a generic 2 to 1 multiplexer that can be
 --          easily scaled using the port generics.
--- @detais <TO ADD>
+-- @details <TO ADD>
 -------------------------------------------------------------------------------
 
--- import std_logic from the IEEE library. Should be done for ALL VHDL files.
 library IEEE;
 use IEEE.std_logic_1164.all;
 
--- Module Entity Declaration
 entity mux is
    generic (
       PORT_WIDTH : in natural := 1
@@ -22,7 +20,6 @@ entity mux is
    );
 end entity mux;
 
--- Module Architecture
 architecture arch_rtl of mux is
 begin
 
