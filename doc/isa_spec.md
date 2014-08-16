@@ -21,24 +21,30 @@ The "other" registers will not be accessible directly, but instructions will be 
 access them when being executed. E.g. the conditional branch can access the status 
 register.
 
+Status Flags
+-------------------------------------------------------------------------------
+
+Instruction Set Summary
+-------------------------------------------------------------------------------
+
 No. | Prefix | Memonic | Description | Operation | Flags Altered |
 ----|--------|---------|-------------|-----------|---------------|
-0   | 000000 |   -     | Reserved | - | - |
-1   | 000001 |   -     | Reserved | - | - |
-2   | 000010 |   -     | Reserved | - | - |
-3   | 000011 |   -     | Reserved | - | - |
-4   | 000100 |   -     | Reserved | - | - |
-5   | 000101 |   -     | Reserved | - | - |
-6   | 000110 |   -     | Reserved | - | - |
-7   | 000111 |   -     | Reserved | - | - |
+0   | 000000 | BLSLI   | Logical Shift Left With Immediate | - | - |
+1   | 000001 | BLSLR   | Logical Shift Left With Register | - | - |
+2   | 000010 | BLSRI   | Logical Shift Right with Immediate | - | - |
+3   | 000011 | BLSRR   | Logical Shift Right with register | - | - |
+4   | 000100 | BANDI   | Bitwise AND with immediate | - | - |
+5   | 000101 | BANDR   | Bitwise AND with register | - | - |
+6   | 000110 | BNADI   | Bitwise NAND with immediate | - | - |
+7   | 000111 | BNADR   | Bitwise NAND with Register | - | - |
 ----|--------|---------|-------------|-----------|---------------|
-8   | 001000 |   -     | Reserved | - | - |
-9   | 001001 |   -     | Reserved | - | - |
-10  | 001010 |   -     | Reserved | - | - |
-11  | 001011 |   -     | Reserved | - | - |
-12  | 001100 |   -     | Reserved | - | - |
-13  | 001101 |   -     | Reserved | - | - |
-14  | 001110 |   -     | Reserved | - | - |
+8   | 001000 | BIORI   | Bitwise Inclusive OR with immediate | - | - |
+9   | 001001 | BIORR   | Bitwise Inclusive OR with Register | - | - |
+10  | 001010 | BNORI   | Bitwise NOR with immediate | - | - |
+11  | 001011 | BNORR   | Bitwise NOR with Register | - | - |
+12  | 001100 | BXORI   | Bitwise XOR with immediate | - | - |
+13  | 001101 | BXORR   | Bitwise XOR with Register | - | - |
+14  | 001110 | BNOTR   | Bitwise NOT | - | - |
 15  | 001111 |   -     | Reserved | - | - |
 ----|--------|---------|-------------|-----------|---------------|
 16  | 010000 |   -     | Reserved | - | - |
