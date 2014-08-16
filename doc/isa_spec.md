@@ -46,7 +46,6 @@ No. | Prefix | Memonic | Description | Operation | Flags Altered |
 5   | 000101 | BANDR   | Bitwise AND with register | - | - |
 6   | 000110 | BNADI   | Bitwise NAND with immediate | - | - |
 7   | 000111 | BNADR   | Bitwise NAND with Register | - | - |
-----|--------|---------|-------------|-----------|---------------|
 8   | 001000 | BIORI   | Bitwise Inclusive OR with immediate | - | - |
 9   | 001001 | BIORR   | Bitwise Inclusive OR with Register | - | - |
 10  | 001010 | BNORI   | Bitwise NOR with immediate | - | - |
@@ -54,20 +53,20 @@ No. | Prefix | Memonic | Description | Operation | Flags Altered |
 12  | 001100 | BXORI   | Bitwise XOR with immediate | - | - |
 13  | 001101 | BXORR   | Bitwise XOR with Register | - | - |
 14  | 001110 | BNOTR   | Bitwise NOT | - | - |
-15  | 001111 |   -     | Reserved | - | - |
 ----|--------|---------|-------------|-----------|---------------|
-16  | 010000 |   -     | Reserved | - | - |
-17  | 010001 |   -     | Reserved | - | - |
-18  | 010010 |   -     | Reserved | - | - |
-19  | 010011 |   -     | Reserved | - | - |
-20  | 010100 |   -     | Reserved | - | - |
-21  | 010101 |   -     | Reserved | - | - |
-22  | 010110 |   -     | Reserved | - | - |
-23  | 010111 |   -     | Reserved | - | - |
+15  | 001111 | AASLI   | Arithmetic Shift Left with Immediate | - | - |
+16  | 010000 | AASLR   | Arithmetic Shift Left with Register | - | - |
+17  | 010001 | AASRI   | Arithmetic Shift Right with Immediate | - | - |
+18  | 010010 | AASRR   | Arithmetic Shift Right with Register | - | - |
+19  | 010011 | AADDI   | Add with immediate | - | - |
+20  | 010100 | AADDR   | Add with register | - | - |
+21  | 010101 | ASUBI   | Subtract with Immediate | - | - |
+22  | 010110 | ASUBR   | Subtract with Register | - | - |
+23  | 010111 | AMULI   | Multiply with immediate | - | - |
+24  | 011000 | AMULR   | Multiply with Register | - | - |
+25  | 011001 | ADIVI   | Divide with immediate | - | - |
+26  | 011010 | ADIVR   | Divide with register | - | - |
 ----|--------|---------|-------------|-----------|---------------|
-24  | 011000 |   -     | Reserved | - | - |
-25  | 011001 |   -     | Reserved | - | - |
-26  | 011010 |   -     | Reserved | - | - |
 27  | 011011 |   -     | Reserved | - | - |
 28  | 011100 |   -     | Reserved | - | - |
 29  | 011101 |   -     | Reserved | - | - |
