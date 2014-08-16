@@ -17,6 +17,8 @@ The main design choices are:
  - Program Counter
  - Stack Pointer Register
  - Status / Flag Register
+ - Link Register
+ - Execution Permissions Registers
 - This leaves 26 bits for other purposes. If we have 32bit wide words then with the 64M 
   of flash storage we have, we will need `log_2(64*1024*1024/32) == 21` bits, leaving 5
   over for other things like reg address, is this sufficient enough bits left over, or 
