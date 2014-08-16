@@ -33,6 +33,17 @@ register.
 Status Flags
 -------------------------------------------------------------------------------
 
+The status register will be a 32 bit register automatically updated after every
+instruction.
+
+Bit | Function
+----|--------------------------------------------------------------------------
+0   |
+1   |
+2   |
+3   |
+4   |
+
 Instruction Set Summary
 -------------------------------------------------------------------------------
 

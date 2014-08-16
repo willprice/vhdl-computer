@@ -16,8 +16,8 @@ entity ff_dtype is
       clk    : in std_logic;
       data   : in std_logic;
       reset  : in std_logic;
-      q      : out std_logic;
-      not_q  : out std_logic
+      q      : buffer std_logic;
+      not_q  : buffer std_logic
    );
 end entity ff_dtype;
 
@@ -35,6 +35,9 @@ begin
       elsif (clk'event and clk='1') then
          q     <= data;
          not_q <= not data;
+      else 
+         q <= q;
+         not_q <= not_q;
       end if;
    end process;
 
