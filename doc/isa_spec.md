@@ -67,13 +67,13 @@ No. | Prefix | Memonic | Description | Operation | Flags Altered |
 25  | 011001 | ADIVI   | Divide with immediate | - | - |
 26  | 011010 | ADIVR   | Divide with register | - | - |
 ----|--------|---------|-------------|-----------|---------------|
-27  | 011011 |   -     | Reserved | - | - |
-28  | 011100 |   -     | Reserved | - | - |
-29  | 011101 |   -     | Reserved | - | - |
-30  | 011110 |   -     | Reserved | - | - |
-31  | 011111 |   -     | Reserved | - | - |
+27  | 011011 | MLRFI   | Load Register From Immediate | - | - |
+28  | 011100 | MLIRO   | Load Register From Immediate With Register offset | - | - |
+29  | 011101 | MLRRO   | Load Register From Register with register offset | - | - |
+30  | 011110 | MSRAI   | Store Register At Immediate | - | - |
+31  | 011111 | MSIRO   | Store Register At Immediate With Register offset | - | - |
+32  | 100000 | MSRRO   | Store Register At Register with Register offset  | - | - |
 ----|--------|---------|-------------|-----------|---------------|
-32  | 100000 |   -     | Reserved | - | - |
 33  | 100001 |   -     | Reserved | - | - |
 34  | 100010 |   -     | Reserved | - | - |
 35  | 100011 |   -     | Reserved | - | - |
