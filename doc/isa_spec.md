@@ -1,5 +1,5 @@
 
-Instruction Set Specification (Preliminary)
+Instruction Set Specification [Preliminary]
 ===============================================================================
 
 This document outlines the preliminary instruction set our computer will use
@@ -40,7 +40,7 @@ Arithmetic Operations
 - ADD
 - SUB
 - MUL
-- DIV ?
+- DIV (Can we get away with only supporting this in software?) NO!
 - Arithmetic Shift Left
 - Arithmetic Shift Right
 
