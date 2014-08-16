@@ -42,6 +42,7 @@ along with the current status of their implementation.
 | mux_2bit   | no  | no  | no |
 | ff_dtype  | no  | no  | no |
 | ff_jk     |  no |  no | no |
+| register  | no  | no  | no |
 |           |     |     |    |
 | Please add more below | - | - | no |
 

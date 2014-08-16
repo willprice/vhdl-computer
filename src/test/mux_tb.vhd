@@ -31,13 +31,22 @@ end component;
 -- signal declarations
 signal input_1 : std_logic_vector(7 downto 0) := "00001111";
 signal input_2 : std_logic_vector(7 downto 0) := "01010101";
-signal out_sig : std_logic_vector(7 downto 0);
+signal out_sig : std_logic_vector(7 downto 0) := "00001111";
 signal select_signal : std_logic := '1';
 
 begin
 
    -- quick n nasty toggle the select signal every 10 ns.
    select_signal <= not select_signal after 10 ns;
+
+   -- Monitors the output of the DUT and throws errors if there is any sort of
+   -- missmatch
+   assert_test : process (out_sig, select_signal)
+   begin
+      if (select_signal='1') then
+         assert(out_sig = input_1) report "Bad MUX output on sel=1";
+      end if;
+   end process assert_test;
 
    -- For correct behavior observe the output value switch between
    -- in_a and in_b every 10 ns;
