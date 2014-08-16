@@ -1,2 +1,3 @@
 src/rtl/build*
 src/test/build*
+*.swp
