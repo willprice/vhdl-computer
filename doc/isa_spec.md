@@ -12,13 +12,20 @@ The main design choices are:
 - 32bit word length
 - 6 bits of op code which gives a maximum instruction set size of 64. 
 - We will use 8 General Purpose Registers.
+  Hence there will usually be 2 register arguments per instruction of 3 bits each.
 - Other registers include:
  - Program Counter
  - Stack Pointer Register
  - Status / Flag Register
-- This leaves 26 bits for other purposes. If we have 32bit wide words then with the 64M of flash storage we have, we'll need `log_2(64*1024*1024/32) == 21` bits, leaving 5 over for other things like reg address, is this sufficient enough bits left over, or should we cut the amount of storage that we can address? 
-- Why have we chosen 32bit word length? What are the technical limitations that stop us from having a longer word length?
-- Are we assuming word length of memory == word length of instruction? (this will make decoding easier)
+- This leaves 26 bits for other purposes. If we have 32bit wide words then with the 64M 
+  of flash storage we have, we will need `log_2(64*1024*1024/32) == 21` bits, leaving 5
+  over for other things like reg address, is this sufficient enough bits left over, or 
+  should we cut the amount of storage that we can address? 
+- Why have we chosen 32bit word length? What are the technical limitations that stop us 
+  from having a longer word length?
+- Are we assuming word length of memory == word length of instruction? (this will make
+  decoding easier)
+
 The "other" registers will not be accessible directly, but instructions will be able to
 access them when being executed. E.g. the conditional branch can access the status 
 register.
