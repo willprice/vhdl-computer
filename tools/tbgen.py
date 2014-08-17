@@ -6,6 +6,7 @@ a simple testbench for it and save the file to src/test/
 
 import sys
 import os
+import re
 import getopt
 
 def main():
@@ -44,15 +45,20 @@ def main():
     tb_file = open(tb_file_name, "w")
     dut_file = open(dut_file_name, "r")
 
+    dut_file_content = dut_file.read()
     to_write = template_file.read()
+
     template_file.close()
+    dut_file.close()
 
     to_write = to_write.replace("$tb_module_name$", tb_module_name)
     to_write = to_write.replace("@file", tb_module_name+".vhd")
 
-    component_ports = ""
-    component_declaration = "component "+dut_module_name+" is\n"
-    component_declaration = component_declaration + component_ports+"\n   end component;"
+    ports_re = r"entity "+dut_module_name+".*end entity "+dut_module_name+";"
+    component_ports_found = re.search(ports_re , dut_file_content, re.S | re.I)
+    
+    component_ports = component_ports_found.group().replace("entity", "component")
+    component_declaration = component_ports.replace("\n", "\n   ")
 
     to_write = to_write.replace("$dut_component$", component_declaration)
 
