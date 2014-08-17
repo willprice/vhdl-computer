@@ -16,7 +16,7 @@ entity <name of the module> is
    )
 end entity <name of the module>;
 
-architecture arch_rtl of <name of the module> is
+architecture rtl of <name of the module> is
 
    -- Signal declarations go here
 
@@ -24,4 +24,4 @@ begin
    
    -- The guts of the module go here.
 
-end architecture arch_rtl;
+end architecture rtl;
