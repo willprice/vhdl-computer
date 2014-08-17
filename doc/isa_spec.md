@@ -54,50 +54,53 @@ Other flags will be added as functionality is required.
 Instruction Set Summary
 -------------------------------------------------------------------------------
 
+Note: Instructions marked with a * next to their memonic support conditional execution
+through the *with mask* feature. This is described in footnote [1].
+
 No. | Prefix | Memonic | Description | Operation | Flags Altered |
 ----|--------|---------|-------------|-----------|---------------|
 0   | 000000 | BLSLI   | Logical Shift Left With Immediate | - | - |
-1   | 000001 | BLSLR   | Logical Shift Left With Register | - | - |
+1   | 000001 | BLSLR*  | Logical Shift Left With Register | - | - |
 2   | 000010 | BLSRI   | Logical Shift Right with Immediate | - | - |
-3   | 000011 | BLSRR   | Logical Shift Right with register | - | - |
+3   | 000011 | BLSRR*  | Logical Shift Right with register | - | - |
 4   | 000100 | BANDI   | Bitwise AND with immediate | - | - |
-5   | 000101 | BANDR   | Bitwise AND with register | - | - |
+5   | 000101 | BANDR*  | Bitwise AND with register | - | - |
 6   | 000110 | BNADI   | Bitwise NAND with immediate | - | - |
-7   | 000111 | BNADR   | Bitwise NAND with Register | - | - |
+7   | 000111 | BNADR*  | Bitwise NAND with Register | - | - |
 8   | 001000 | BIORI   | Bitwise Inclusive OR with immediate | - | - |
-9   | 001001 | BIORR   | Bitwise Inclusive OR with Register | - | - |
+9   | 001001 | BIORR*  | Bitwise Inclusive OR with Register | - | - |
 10  | 001010 | BNORI   | Bitwise NOR with immediate | - | - |
-11  | 001011 | BNORR   | Bitwise NOR with Register | - | - |
+11  | 001011 | BNORR*  | Bitwise NOR with Register | - | - |
 12  | 001100 | BXORI   | Bitwise XOR with immediate | - | - |
-13  | 001101 | BXORR   | Bitwise XOR with Register | - | - |
-14  | 001110 | BNOTR   | Bitwise NOT | - | - |
+13  | 001101 | BXORR*  | Bitwise XOR with Register | - | - |
+14  | 001110 | BNOTR*  | Bitwise NOT | - | - |
 ----|--------|---------|-------------|-----------|---------------|
 15  | 001111 | AASLI   | Arithmetic Shift Left with Immediate | - | - |
-16  | 010000 | AASLR   | Arithmetic Shift Left with Register | - | - |
+16  | 010000 | AASLR*  | Arithmetic Shift Left with Register | - | - |
 17  | 010001 | AASRI   | Arithmetic Shift Right with Immediate | - | - |
-18  | 010010 | AASRR   | Arithmetic Shift Right with Register | - | - |
+18  | 010010 | AASRR*  | Arithmetic Shift Right with Register | - | - |
 19  | 010011 | AADDI   | Add with immediate | - | - |
-20  | 010100 | AADDR   | Add with register | - | - |
+20  | 010100 | AADDR*  | Add with register | - | - |
 21  | 010101 | ASUBI   | Subtract with Immediate | - | - |
-22  | 010110 | ASUBR   | Subtract with Register | - | - |
+22  | 010110 | ASUBR*  | Subtract with Register | - | - |
 23  | 010111 | AMULI   | Multiply with immediate | - | - |
-24  | 011000 | AMULR   | Multiply with Register | - | - |
+24  | 011000 | AMULR*  | Multiply with Register | - | - |
 25  | 011001 | ADIVI   | Divide with immediate | - | - |
-26  | 011010 | ADIVR   | Divide with register | - | - |
+26  | 011010 | ADIVR*  | Divide with register | - | - |
 ----|--------|---------|-------------|-----------|---------------|
 27  | 011011 | MLRFI   | Load Register From Immediate | - | - |
 28  | 011100 | MLIRO   | Load Register From Immediate With Register offset | - | - |
-29  | 011101 | MLRRO   | Load Register From Register with register offset | - | - |
+29  | 011101 | MLRRO*  | Load Register From Register with register offset | - | - |
 30  | 011110 | MSRAI   | Store Register At Immediate | - | - |
 31  | 011111 | MSIRO   | Store Register At Immediate With Register offset | - | - |
-32  | 100000 | MSRRO   | Store Register At Register with Register offset  | - | - |
+32  | 100000 | MSRRO*  | Store Register At Register with Register offset  | - | - |
 ----|--------|---------|-------------|-----------|---------------|
 33  | 100001 | BRANI   | Branch to immediate address specified in instruction | - | - |
-34  | 100010 | BRANR   | Branch to address stored in register | - | - |
+34  | 100010 | BRANR*  | Branch to address stored in register | - | - |
 35  | 100011 | BRWMI   | Branch with mask to immediate address [1] | - | - |
-36  | 100100 | BRWMR   | Branch with mask to address in register [1] | - | - |
-37  | 100101 | CALLR   | Calls Subroutine which starts at address in register. Pushes the PC into the link register. |-|-|
-38  | 100110 | CARET   | Call Return. Return from a subroutine.
+36  | 100100 |         | | - | - |
+37  | 100101 | CALLR*  | Calls Subroutine which starts at address in register. Pushes the PC into the link register. |-|-|
+38  | 100110 | CARET*  | Call Return. Return from a subroutine.
 ----|--------|---------|-------------|-----------|---------------|
 39  | 100111 |   -     | Reserved | - | - |
 40  | 101000 |   -     | Reserved | - | - |
@@ -127,8 +130,23 @@ No. | Prefix | Memonic | Description | Operation | Flags Altered |
 62  | 111110 |   -     | Reserved | - | - |
 63  | 111111 |   -     | Reserved | - | - |
 
-[1] - With Mask Instructions take a 6 bit argument which is used to mask the lower 6
-      bits of the status register. The instruction is only executed iff the result of
-      the mask operation is not zero.
+***
 
+[1] - With Mask Instructions
+-------------------------------------------------------------------------------
+
+All instructions which have enough space left in their word bits after the essential
+opcode and arguments support conditional execution. This is done using the *with mask*
+feature.
+
+In each instruction supporting this, 6 bits of the instruction word are set asside as
+mask bits. These bits are used to mask the lower 6 bits of the status register. If the
+result of the mask operation is zero then the instruciton is treated as a NOP and 
+execution continues as per normal. If the result of the mask is anything other than zero
+then the instruction is executed in the normal manner.
+
+Inclusion of the bit mask means that we can utilize complex conditional execution in
+a large number of instructions very simply. This drastically reduces the number of
+required instructions and allows for a far smaller and simpler decode pipeline while
+not sacrificing functionality.
 
