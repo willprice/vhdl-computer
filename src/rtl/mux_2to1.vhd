@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
--- @file mux.vhd
+-- @file mux_2to1.vhd
 -- @brief Simple implementation of a generic multiplexer that can be
 --          easily scaled using the port generics.
 -------------------------------------------------------------------------------
@@ -11,25 +11,28 @@ use IEEE.std_logic_unsigned.all;
 library work; 
 use work.common_types.all;
 
-entity mux is
+entity mux_2to1 is
    generic (
-      PORT_WIDTH   : in integer := 8;
-      SELECT_WIDTH : in integer := 1;
-      NUM_INPUTS   : in integer := 2
+      PORT_WIDTH   : in integer := 1
    );
    port(
-      inputs  : in VEC_ARRAY(0 to NUM_INPUTS -1);
-      sel     : in  std_logic_vector(SELECT_WIDTH-1 downto 0);
+      input_0 : in  std_logic_vector(PORT_WIDTH - 1 downto 0);
+      input_1 : in  std_logic_vector(PORT_WIDTH - 1 downto 0);
+      sel     : in  std_logic;
       output  : out std_logic_vector(PORT_WIDTH - 1 downto 0)
    );
-end entity mux;
+end entity mux_2to1;
 
-architecture arch_behav of mux is
+architecture arch_behav of mux_2to1 is
 begin
 
    assign_output : process (sel, inputs)
    begin
-     output <= inputs(CONV_INTEGER(sel));
+      if(sel = '0') then
+         output <= input_0;
+      else
+         output <= input_1;
+      end if;
    end process;
 
 end architecture arch_behav;

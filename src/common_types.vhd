@@ -9,6 +9,4 @@ use IEEE.std_logic_unsigned.all;
 
 package common_types is
 
-   type VEC_ARRAY is array(integer range <>) of std_logic_vector(7 downto 0);
-
 end package;
