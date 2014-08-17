@@ -128,8 +128,8 @@ No. | Prefix | Memonic | Description | Flags Altered |
 59  | 111011 |   -     | Reserved | - |
 60  | 111100 |   -     | Reserved | - |
 61  | 111101 |   -     | Reserved | - |
-62  | 111110 |   -     | Reserved | - |
-63  | 111111 |   -     | Reserved | - |
+62  | 111110 | DEBUG   | Takes numerous arguments and performs some debug function. | - |
+63  | 111111 | HALT    | Halts the Processor immediatly and stops all computation. | - |
 
 ***
 
