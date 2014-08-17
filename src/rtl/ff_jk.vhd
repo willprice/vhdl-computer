@@ -21,15 +21,15 @@ entity ff_jk is
    );
 end entity ff_jk;
 
-architecture arch_rtl of ff_jk is
+architecture rtl of ff_jk is
 begin
    
    update_output : process(clk, j, k)
    begin
-      if(clk'event and clk='1') then
+      if(rising_edge(clk)) then
          q     <= (j and not q) or (not k and q);
          not_q <= not q;
       end if;
    end process;
 
-end architecture arch_rtl;
+end architecture rtl;

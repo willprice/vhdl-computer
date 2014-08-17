@@ -1,7 +1,6 @@
--- Generated automatically with tbgen.py
--- ff_jk_tb.vhd
--- @brief
---
+--------------------------------------------------------------------------------
+-- @file ff_jk_tb.vhd
+--------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.Std_logic_1164.all;
@@ -12,7 +11,6 @@ end;
 
 architecture testbench of ff_jk_tb is
 
-   -- DUT COMPONENT DECLARATION
    component ff_jk is
       port( 
          clk    : in     std_logic;
@@ -23,23 +21,27 @@ architecture testbench of ff_jk_tb is
       );
    end component ff_jk;
 
-   -- SIGNALS FOR DUT I/O GO HERE
-   $dut_signals$
+   signal clk   : std_logic;
+   signal j     : std_logic;
+   signal k     : std_logic;
+   signal q     : std_logic;
+   signal not_q : std_logic;
 
 begin
 
-   -- DUT INSTANCE GOES HERE
-   $dut_instance$
+   DUT : ff_jk port map(
+      clk => clk,
+      j => j,
+      k => k,
+      q => q,
+      not_q => not_q
+   );
 
-   stimulus: process
+
+   test_hold_state_does_not_invoke_a_change: process(clk)
    begin
-  
-     -- Put initialisation code here
-
-
-     -- Put test bench stimulus code here
-
-     wait;
+      j <= '0';
+      k <= '0';
    end process;
 
 end;

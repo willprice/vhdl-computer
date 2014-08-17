@@ -21,7 +21,7 @@ entity ff_dtype is
    );
 end entity ff_dtype;
 
-architecture arch_rtl of ff_dtype is
+architecture rtl of ff_dtype is
 begin
   
    -- @details
@@ -32,7 +32,7 @@ begin
       if(reset = '1') then
          q     <= '0';
          not_q <= '1';
-      elsif (clk'event and clk='1') then
+      elsif (rising_edge(clk)) then
          q     <= data;
          not_q <= not data;
       else 
@@ -41,4 +41,4 @@ begin
       end if;
    end process;
 
-end architecture arch_rtl;
+end architecture rtl;
