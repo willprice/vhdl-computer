@@ -57,79 +57,79 @@ Instruction Set Summary
 Note: Instructions marked with a * next to their memonic support conditional execution
 through the *with mask* feature. This is described in footnote [1].
 
-No. | Prefix | Memonic | Description | Operation | Flags Altered |
-----|--------|---------|-------------|-----------|---------------|
-0   | 000000 | BLSLI   | Logical Shift Left With Immediate |  | N Z O L E S |
-1   | 000001 | BLSLR*  | Logical Shift Left With Register | - | N Z O L E S  |
-2   | 000010 | BLSRI   | Logical Shift Right with Immediate | - | N Z O L E S  |
-3   | 000011 | BLSRR*  | Logical Shift Right with register | - | N Z O L E S  |
-4   | 000100 | BANDI   | Bitwise AND with immediate | - | N Z O L E S  |
-5   | 000101 | BANDR*  | Bitwise AND with register | - | N Z O L E S  |
-6   | 000110 | BNADI   | Bitwise NAND with immediate | - | N Z O L E S  |
-7   | 000111 | BNADR*  | Bitwise NAND with Register | - | N Z O L E S  |
-8   | 001000 | BIORI   | Bitwise Inclusive OR with immediate | - | N Z O L E S  |
-9   | 001001 | BIORR*  | Bitwise Inclusive OR with Register | - | N Z O L E S  |
-10  | 001010 | BNORI   | Bitwise NOR with immediate | - | N Z O L E S  |
-11  | 001011 | BNORR*  | Bitwise NOR with Register | - | N Z O L E S  |
-12  | 001100 | BXORI   | Bitwise XOR with immediate | - | N Z O L E S  |
-13  | 001101 | BXORR*  | Bitwise XOR with Register | - | N Z O L E S  |
-14  | 001110 | BNOTR*  | Bitwise NOT | - | N Z O L E S  |
-----|--------|---------|-------------|----|----|
-15  | 001111 | AASLI   | Arithmetic Shift Left with Immediate | - | N Z O L E S  |
-16  | 010000 | AASLR*  | Arithmetic Shift Left with Register | - | N Z O L E S  |
-17  | 010001 | AASRI   | Arithmetic Shift Right with Immediate | - | N Z O L E S  |
-18  | 010010 | AASRR*  | Arithmetic Shift Right with Register | - | N Z O L E S  |
-19  | 010011 | AADDI   | Add with immediate | - | N Z O L E S  |
-20  | 010100 | AADDR*  | Add with register | - | N Z O L E S  |
-21  | 010101 | ASUBI   | Subtract with Immediate | - | N Z O L E S  |
-22  | 010110 | ASUBR*  | Subtract with Register | - | N Z O L E S  |
-23  | 010111 | AMULI   | Multiply with immediate | - | N Z O L E S  |
-24  | 011000 | AMULR*  | Multiply with Register | - | N Z O L E S  |
-25  | 011001 | ADIVI   | Divide with immediate | - | N Z O L E S  |
-26  | 011010 | ADIVR*  | Divide with register | - | N Z O L E S  |
-----|--------|---------|-------------|----|----|
-27  | 011011 | MLRFI   | Load Register From Immediate | - | N Z O L E S  |
-28  | 011100 | MLIRO   | Load Register From Immediate With Register offset | - | N Z O L E S  |
-29  | 011101 | MLRRO*  | Load Register From Register with register offset | - |  N Z O L E S |
-30  | 011110 | MSRAI   | Store Register At Immediate | - | N Z O L E S  |
-31  | 011111 | MSIRO   | Store Register At Immediate With Register offset | - | N Z O L E S  |
-32  | 100000 | MSRRO*  | Store Register At Register with Register offset  | - | N Z O L E S  |
-----|--------|---------|-------------|----|----|
-33  | 100001 | BRANI   | Branch to immediate address specified in instruction | - | N Z O L E S  |
-34  | 100010 | BRANR*  | Branch to address stored in register | - | N Z O L E S  |
-35  | 100011 | BRWMI   | Branch with mask to immediate address | - | N Z O L E S  |
-36  | 100100 | CALLR*  | Calls Subroutine which starts at address in register. Pushes the PC into the link register. |-| N Z O L E S | 
-37  | 100101 | CARET*  | Call Return. Return from a subroutine. | - | N Z O L E S |
-38  | 100110 | - | - | - | 
-----|--------|---------|-------------|----|----|
-39  | 100111 | STPSH*  | Push Register to the stack. | - | N Z O L E S  |
-40  | 101000 | STPOP*  | Pop to register from the stack. | - | N Z O L E S  |
-41  | 101001 | STKLD*  | Load the stack register into a gp register. | - | N Z O L E S  |
-----|--------|---------|-------------|----|----|
-42  | 101010 |   -     | Reserved | - | - |
-43  | 101011 |   -     | Reserved | - | - |
-44  | 101100 |   -     | Reserved | - | - |
-45  | 101101 |   -     | Reserved | - | - |
-46  | 101110 |   -     | Reserved | - | - |
-47  | 101111 |   -     | Reserved | - | - |
-----|--------|---------|-------------|----|----|
-48  | 110000 |   -     | Reserved | - | - |
-49  | 110001 |   -     | Reserved | - | - |
-50  | 110010 |   -     | Reserved | - | - |
-51  | 110011 |   -     | Reserved | - | - |
-52  | 110100 |   -     | Reserved | - | - |
-53  | 110101 |   -     | Reserved | - | - |
-54  | 110110 |   -     | Reserved | - | - |
-55  | 110111 |   -     | Reserved | - | - |
-----|--------|---------|-------------|----|----|
-56  | 111000 |   -     | Reserved | - | - |
-57  | 111001 |   -     | Reserved | - | - |
-58  | 111010 |   -     | Reserved | - | - |
-59  | 111011 |   -     | Reserved | - | - |
-60  | 111100 |   -     | Reserved | - | - |
-61  | 111101 |   -     | Reserved | - | - |
-62  | 111110 |   -     | Reserved | - | - |
-63  | 111111 |   -     | Reserved | - | - |
+No. | Prefix | Memonic | Description | Flags Altered |
+----|--------|---------|-------------|---------------|
+0   | 000000 | BLSLI   | Logical Shift Left With Immediate  | N Z O L E S |
+1   | 000001 | BLSLR*  | Logical Shift Left With Register  | N Z O L E S  |
+2   | 000010 | BLSRI   | Logical Shift Right with Immediate  | N Z O L E S  |
+3   | 000011 | BLSRR*  | Logical Shift Right with register  | N Z O L E S  |
+4   | 000100 | BANDI   | Bitwise AND with immediate  | N Z O L E S  |
+5   | 000101 | BANDR*  | Bitwise AND with register  | N Z O L E S  |
+6   | 000110 | BNADI   | Bitwise NAND with immediate  | N Z O L E S  |
+7   | 000111 | BNADR*  | Bitwise NAND with Register  | N Z O L E S  |
+8   | 001000 | BIORI   | Bitwise Inclusive OR with immediate | N Z O L E S  |
+9   | 001001 | BIORR*  | Bitwise Inclusive OR with Register | N Z O L E S  |
+10  | 001010 | BNORI   | Bitwise NOR with immediate | N Z O L E S  |
+11  | 001011 | BNORR*  | Bitwise NOR with Register | N Z O L E S  |
+12  | 001100 | BXORI   | Bitwise XOR with immediate | N Z O L E S  |
+13  | 001101 | BXORR*  | Bitwise XOR with Register | N Z O L E S  |
+14  | 001110 | BNOTR*  | Bitwise NOT | N Z O L E S  |
+----|--------|---------|-------------|----|
+15  | 001111 | AASLI   | Arithmetic Shift Left with Immediate | N Z O L E S  |
+16  | 010000 | AASLR*  | Arithmetic Shift Left with Register | N Z O L E S  |
+17  | 010001 | AASRI   | Arithmetic Shift Right with Immediate | N Z O L E S  |
+18  | 010010 | AASRR*  | Arithmetic Shift Right with Register | N Z O L E S  |
+19  | 010011 | AADDI   | Add with immediate | N Z O L E S  |
+20  | 010100 | AADDR*  | Add with register | N Z O L E S  |
+21  | 010101 | ASUBI   | Subtract with Immediate | N Z O L E S  |
+22  | 010110 | ASUBR*  | Subtract with Register | N Z O L E S  |
+23  | 010111 | AMULI   | Multiply with immediate | N Z O L E S  |
+24  | 011000 | AMULR*  | Multiply with Register | N Z O L E S  |
+25  | 011001 | ADIVI   | Divide with immediate | N Z O L E S  |
+26  | 011010 | ADIVR*  | Divide with register | N Z O L E S  |
+----|--------|---------|-------------|----|
+27  | 011011 | MLRFI   | Load Register From Immediate| N Z O L E S  |
+28  | 011100 | MLIRO   | Load Register From Immediate With Register offset | N Z O L E S  |
+29  | 011101 | MLRRO*  | Load Register From Register with register offset |  N Z O L E S |
+30  | 011110 | MSRAI   | Store Register At Immediate | N Z O L E S  |
+31  | 011111 | MSIRO   | Store Register At Immediate With Register offset | N Z O L E S  |
+32  | 100000 | MSRRO*  | Store Register At Register with Register offset | N Z O L E S  |
+----|--------|---------|-------------|----|
+33  | 100001 | BRANI   | Branch to immediate address specified in instruction | N Z O L E S  |
+34  | 100010 | BRANR*  | Branch to address stored in register | N Z O L E S  |
+35  | 100011 | BRWMI   | Branch with mask to immediate address | N Z O L E S  |
+36  | 100100 | CALLR*  | Calls Subroutine which starts at address in register. Pushes the PC into the link register.| N Z O L E S | 
+37  | 100101 | CARET*  | Call Return. Return from a subroutine. | N Z O L E S |
+38  | 100110 | - | - | 
+----|--------|---------|-------------|----|
+39  | 100111 | STPSH*  | Push Register to the stack. | N Z O L E S  |
+40  | 101000 | STPOP*  | Pop to register from the stack. | N Z O L E S  |
+41  | 101001 | STKLD*  | Load the stack register into a gp register. | N Z O L E S  |
+----|--------|---------|-------------|----|
+42  | 101010 |   -     | Reserved | - |
+43  | 101011 |   -     | Reserved | - |
+44  | 101100 |   -     | Reserved | - |
+45  | 101101 |   -     | Reserved | - |
+46  | 101110 |   -     | Reserved | - |
+47  | 101111 |   -     | Reserved | - |
+----|--------|---------|-------------|-----|
+48  | 110000 |   -     | Reserved | - |
+49  | 110001 |   -     | Reserved | - |
+50  | 110010 |   -     | Reserved | - |
+51  | 110011 |   -     | Reserved | - |
+52  | 110100 |   -     | Reserved | - |
+53  | 110101 |   -     | Reserved | - |
+54  | 110110 |   -     | Reserved | - |
+55  | 110111 |   -     | Reserved | - |
+----|--------|---------|-------------|-----|
+56  | 111000 |   -     | Reserved | - |
+57  | 111001 |   -     | Reserved | - |
+58  | 111010 |   -     | Reserved | - |
+59  | 111011 |   -     | Reserved | - |
+60  | 111100 |   -     | Reserved | - |
+61  | 111101 |   -     | Reserved | - |
+62  | 111110 |   -     | Reserved | - |
+63  | 111111 |   -     | Reserved | - |
 
 ***
 
