@@ -1,6 +1,5 @@
 --------------------------------------------------------------------------------
 -- @file ff_dtype_tb.vhd
--- @brief a simple testbench for the dtype flip flop module
 --------------------------------------------------------------------------------
 
 library IEEE;
@@ -9,7 +8,7 @@ use IEEE.std_logic_1164.all;
 entity ff_dtype_tb is
 end entity ff_dtype_tb;
 
-architecture arch_testbench of ff_dtype_tb is
+architecture testbench of ff_dtype_tb is
 
 component ff_dtype is
    port(
@@ -40,9 +39,11 @@ begin
       data => sig_data,
       reset => sig_reset
    );
+   
+   
    test_q_is_low_under_reset: process
    begin
-      wait until sig_reset'event and sig_reset='1';
+      wait until rising_edge(sig_reset);
       assert (sig_q = '0') report "Q is not zero under reset conditions" severity error;
    end process;
 
@@ -60,4 +61,4 @@ begin
       end if;
    end process;
 
-end architecture arch_testbench;
+end architecture testbench;
