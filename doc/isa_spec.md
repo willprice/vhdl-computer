@@ -74,7 +74,7 @@ No. | Prefix | Memonic | Description | Operation | Flags Altered |
 12  | 001100 | BXORI   | Bitwise XOR with immediate | - | - |
 13  | 001101 | BXORR*  | Bitwise XOR with Register | - | - |
 14  | 001110 | BNOTR*  | Bitwise NOT | - | - |
-----|--------|---------|-------------|-----------|---------------|
+----|--------|---------|-------------|----|----|
 15  | 001111 | AASLI   | Arithmetic Shift Left with Immediate | - | - |
 16  | 010000 | AASLR*  | Arithmetic Shift Left with Register | - | - |
 17  | 010001 | AASRI   | Arithmetic Shift Right with Immediate | - | - |
@@ -87,31 +87,32 @@ No. | Prefix | Memonic | Description | Operation | Flags Altered |
 24  | 011000 | AMULR*  | Multiply with Register | - | - |
 25  | 011001 | ADIVI   | Divide with immediate | - | - |
 26  | 011010 | ADIVR*  | Divide with register | - | - |
-----|--------|---------|-------------|-----------|---------------|
+----|--------|---------|-------------|----|----|
 27  | 011011 | MLRFI   | Load Register From Immediate | - | - |
 28  | 011100 | MLIRO   | Load Register From Immediate With Register offset | - | - |
 29  | 011101 | MLRRO*  | Load Register From Register with register offset | - | - |
 30  | 011110 | MSRAI   | Store Register At Immediate | - | - |
 31  | 011111 | MSIRO   | Store Register At Immediate With Register offset | - | - |
 32  | 100000 | MSRRO*  | Store Register At Register with Register offset  | - | - |
-----|--------|---------|-------------|-----------|---------------|
+----|--------|---------|-------------|----|----|
 33  | 100001 | BRANI   | Branch to immediate address specified in instruction | - | - |
 34  | 100010 | BRANR*  | Branch to address stored in register | - | - |
-35  | 100011 | BRWMI   | Branch with mask to immediate address [1] | - | - |
-36  | 100100 |         | | - | - |
-37  | 100101 | CALLR*  | Calls Subroutine which starts at address in register. Pushes the PC into the link register. |-|-|
-38  | 100110 | CARET*  | Call Return. Return from a subroutine.
-----|--------|---------|-------------|-----------|---------------|
-39  | 100111 |   -     | Reserved | - | - |
-40  | 101000 |   -     | Reserved | - | - |
-41  | 101001 |   -     | Reserved | - | - |
+35  | 100011 | BRWMI   | Branch with mask to immediate address | - | - |
+36  | 100100 | CALLR*  | Calls Subroutine which starts at address in register. Pushes the PC into the link register. |-|-|       | | - | - |
+37  | 100101 | CARET*  | Call Return. Return from a subroutine.
+38  | 100110 | - | - | - | 
+----|--------|---------|-------------|----|----|
+39  | 100111 | STPSH*  | Push Register to the stack. | - | - |
+40  | 101000 | STPOP*  | Pop to register from the stack. | - | - |
+41  | 101001 | STKLD*  | Load the stack register into a gp register. | - | - |
+----|--------|---------|-------------|----|----|
 42  | 101010 |   -     | Reserved | - | - |
 43  | 101011 |   -     | Reserved | - | - |
 44  | 101100 |   -     | Reserved | - | - |
 45  | 101101 |   -     | Reserved | - | - |
 46  | 101110 |   -     | Reserved | - | - |
 47  | 101111 |   -     | Reserved | - | - |
-----|--------|---------|-------------|-----------|---------------|
+----|--------|---------|-------------|----|----|
 48  | 110000 |   -     | Reserved | - | - |
 49  | 110001 |   -     | Reserved | - | - |
 50  | 110010 |   -     | Reserved | - | - |
@@ -120,7 +121,7 @@ No. | Prefix | Memonic | Description | Operation | Flags Altered |
 53  | 110101 |   -     | Reserved | - | - |
 54  | 110110 |   -     | Reserved | - | - |
 55  | 110111 |   -     | Reserved | - | - |
-----|--------|---------|-------------|-----------|---------------|
+----|--------|---------|-------------|----|----|
 56  | 111000 |   -     | Reserved | - | - |
 57  | 111001 |   -     | Reserved | - | - |
 58  | 111010 |   -     | Reserved | - | - |
