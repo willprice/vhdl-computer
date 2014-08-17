@@ -38,13 +38,18 @@ Status Flags
 The status register will be a 32 bit register automatically updated after every
 instruction.
 
-Bit | Function
-----|--------------------------------------------------------------------------
-0   |
-1   |
-2   |
-3   |
-4   |
+Bit | Flag | Function
+----|------|-------------------------------------------------------------------
+0   | N    | Negative Flag - The result of the previous operation was negative.
+1   | Z    | Zero Flag - The result of the previous operation was zero.
+2   | O    | Overflow - The previous operation caused an Overflow in the ALU
+3   | L    | Less than Flag
+4   | E    | Equal Flag
+5   | S    | Supervisor Flag - The currently executing code has enhanced privilidges
+6-31| -    | Reserved
+
+Other flags will be added as functionality is required.
+
 
 Instruction Set Summary
 -------------------------------------------------------------------------------
@@ -87,14 +92,14 @@ No. | Prefix | Memonic | Description | Operation | Flags Altered |
 31  | 011111 | MSIRO   | Store Register At Immediate With Register offset | - | - |
 32  | 100000 | MSRRO   | Store Register At Register with Register offset  | - | - |
 ----|--------|---------|-------------|-----------|---------------|
-33  | 100001 |   -     | Reserved | - | - |
-34  | 100010 |   -     | Reserved | - | - |
-35  | 100011 |   -     | Reserved | - | - |
-36  | 100100 |   -     | Reserved | - | - |
-37  | 100101 |   -     | Reserved | - | - |
-38  | 100110 |   -     | Reserved | - | - |
-39  | 100111 |   -     | Reserved | - | - |
+33  | 100001 | BRANI   | Branch to immediate address specified in instruction | - | - |
+34  | 100010 | BRANR   | Branch to address stored in register | - | - |
+35  | 100011 | BRWMI   | Branch with mask to immediate address [1] | - | - |
+36  | 100100 | BRWMR   | Branch with mask to address in register [1] | - | - |
+37  | 100101 | CALLR   | Calls Subroutine which starts at address in register. Pushes the PC into the link register. |-|-|
+38  | 100110 | CARET   | Call Return. Return from a subroutine.
 ----|--------|---------|-------------|-----------|---------------|
+39  | 100111 |   -     | Reserved | - | - |
 40  | 101000 |   -     | Reserved | - | - |
 41  | 101001 |   -     | Reserved | - | - |
 42  | 101010 |   -     | Reserved | - | - |
@@ -121,3 +126,9 @@ No. | Prefix | Memonic | Description | Operation | Flags Altered |
 61  | 111101 |   -     | Reserved | - | - |
 62  | 111110 |   -     | Reserved | - | - |
 63  | 111111 |   -     | Reserved | - | - |
+
+[1] - With Mask Instructions take a 6 bit argument which is used to mask the lower 6
+      bits of the status register. The instruction is only executed iff the result of
+      the mask operation is not zero.
+
+
