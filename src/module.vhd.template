@@ -9,16 +9,16 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity <name of the module> is
+entity <MODULE_NAME> is
    generic (
       -- module generics like port widths go here
    );
    port(
       -- port list goes here
    )
-end entity <name of the module>;
+end entity <MODULE_NAME>;
 
-architecture rtl of <name of the module> is
+architecture rtl of <MODULE_NAME> is
 
    -- Signal declarations go here
 
