@@ -2,6 +2,7 @@
 -- @file <Name of the file>
 -- @brief <TO ADD>
 -- @details <TO ADD>
+-- @see <TESTBENCH>
 -------------------------------------------------------------------------------
 
 library IEEE;
