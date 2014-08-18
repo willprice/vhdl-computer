@@ -1,27 +1,28 @@
--- Generated automatically with tbgen.py
--- @file
--- @brief
---
+------------------------------------------------------------------------------
+-- @file <FILENAME>
+-- @see <DUT>
+-------------------------------------------------------------------------------
+
 
 library IEEE;
 use IEEE.Std_logic_1164.all;
 use IEEE.Numeric_Std.all;
 
-entity $tb_module_name$ is
+entity <TB_MODULE_NAME> is
 end;
 
-architecture testbench of $tb_module_name$ is
+architecture testbench of <TB_MODULE_NAME> is
 
    -- DUT COMPONENT DECLARATION
-   $dut_component$
+   <DUT_COMPONENT>
 
    -- SIGNALS FOR DUT I/O GO HERE
-   $dut_signals$
+   <DUT_SIGNALS>
 
 begin
 
    -- DUT INSTANCE GOES HERE
-   $dut_instance$
+   <DUT_INSTANCE>
 
    stimulus: process
    begin

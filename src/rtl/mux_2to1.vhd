@@ -23,10 +23,10 @@ entity mux_2to1 is
    );
 end entity mux_2to1;
 
-architecture arch_behav of mux_2to1 is
+architecture behav of mux_2to1 is
 begin
 
-   assign_output : process (sel, inputs)
+   assign_output : process (sel, input_0, input_1)
    begin
       if(sel = '0') then
          output <= input_0;
@@ -35,4 +35,4 @@ begin
       end if;
    end process;
 
-end architecture arch_behav;
+end architecture behav;

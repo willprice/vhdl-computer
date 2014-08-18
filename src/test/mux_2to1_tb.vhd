@@ -1,7 +1,6 @@
--- Generated automatically with tbgen.py
--- mux_2to1_tb.vhd
--- @brief
---
+--------------------------------------------------------------------------------
+-- @file mux_2to1_tb.vhd
+--------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.Std_logic_1164.all;
@@ -26,12 +25,10 @@ architecture testbench of mux_2to1_tb is
    end component mux_2to1;
 
    -- SIGNALS FOR DUT I/O GO HERE
-   $dut_signals$
 
 begin
 
    -- DUT INSTANCE GOES HERE
-   $dut_instance$
 
    stimulus: process
    begin

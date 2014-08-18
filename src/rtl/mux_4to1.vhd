@@ -21,7 +21,7 @@ entity mux_4to1 is
    );
 end entity mux_4to1;
 
-architecture arch_rtl of mux_4to1 is
+architecture rtl of mux_4to1 is
 begin
 
    assign_output : process (sel, in_0, in_1, in_2, in_3)
@@ -35,4 +35,4 @@ begin
       end case;
    end process;
 
-end architecture arch_rtl;
+end architecture rtl;
