@@ -10,15 +10,15 @@ end entity ff_dtype_tb;
 
 architecture testbench of ff_dtype_tb is
 
-component ff_dtype is
-   port(
-      clk    : in std_logic;
-      data   : in std_logic;
-      reset  : in std_logic;
-      q      : buffer std_logic;
-      not_q  : buffer std_logic
-   );
-end component ff_dtype;
+   component ff_dtype is
+      port(
+         clk    : in std_logic;
+         data   : in std_logic;
+         reset  : in std_logic;
+         q      : buffer std_logic;
+         not_q  : buffer std_logic
+      );
+   end component ff_dtype;
 
    signal sig_q : std_logic := '0';
    signal sig_not_q : std_logic := '1';

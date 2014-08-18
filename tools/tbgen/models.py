@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 import re
 
@@ -7,11 +8,16 @@ class VhdlObject(object):
     pass
 
 class TB(VhdlObject):
+    """
+    First should be instantiated and the the attribute `contents` set to that of the TB.
+    Once that is done you can `write_testbench()` on it.
+    """
     def __init__(self, dut, dir_path, contents, suffix="_tb"):
         self.dut = dut
         self.name = self.generate_name(suffix)
         self.file_name = self.name + ".vhd"
         self.file_path = self.generate_file_path(dir_path)
+        self.check()
 
     def generate_file_path(self, dir_path):
         return os.path.join(dir_path, "test", self.file_name)
@@ -34,18 +40,18 @@ class TB(VhdlObject):
 class DUT(VhdlObject):
     def __init__(self, name, dir_path):
         self.name = name
-        self.file_path = self.get_dut_file_path(dir_path)
-        self.contents = self.load_dut_file()
-        self.component = self.parse_port_contents()
+        self.file_path = self.get_file_path(dir_path)
+        self.contents = self.load()
+        self.component = self.parse_components()
 
-    def get_dut_file_path(self, dir_path):
+    def get_file_path(self, dir_path):
         return os.path.join(dir_path, self.name + ".vhd")
 
-    def load_dut_file(self):
+    def load(self):
         with open(self.file_path, "r") as dut_file:
             return dut_file.read()
 
-    def parse_port_contents(self):
+    def parse_components(self):
         ports_re = "entity %s is.*end entity %s;" % (self.name, self.name)
         component_ports_found = re.search(ports_re, self.contents, flags=(re.DOTALL | re.IGNORECASE))
         if component_ports_found:
