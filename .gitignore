@@ -3,3 +3,7 @@ src/test/build*
 *.swp
 *.o
 *.cf
+.idea
+.project
+.settings
+.library_mapping.xml
