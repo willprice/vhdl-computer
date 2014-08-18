@@ -34,7 +34,7 @@ begin
     not_base <= not base;
     not_comp <= not comp;
 
-    eq <= (base and comp) or (not_base and not_comp));
+    eq <= (base and comp) or (not_base and not_comp);
     lt <= base and not_comp;
     gt <= not_base and comp;
 
