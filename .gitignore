@@ -5,6 +5,8 @@ src/test/build*
 *.swp
 *.o
 *.cf
+*.pyc
+*#
 .idea
 .project
 .settings
