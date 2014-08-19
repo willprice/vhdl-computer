@@ -1,6 +1,6 @@
 ------------------------------------------------------------------------------
--- @file <FILENAME>
--- @see <DUT>
+-- @file {{ tb.file_name }}
+-- @see {{ dut.name }}
 -------------------------------------------------------------------------------
 
 
@@ -8,21 +8,18 @@ library IEEE;
 use IEEE.Std_logic_1164.all;
 use IEEE.Numeric_Std.all;
 
-entity <TB_MODULE_NAME> is
+entity {{ tb.name }} is
 end;
 
-architecture testbench of <TB_MODULE_NAME> is
+architecture testbench of {{ tb.name }} is
 
-   -- DUT COMPONENT DECLARATION
-   <DUT_COMPONENT>
+   {{ dut.component }}
 
-   -- SIGNALS FOR DUT I/O GO HERE
-   <DUT_SIGNALS>
+   {{ dut.signals }}
 
 begin
 
-   -- DUT INSTANCE GOES HERE
-   <DUT_INSTANCE>
+   {{ dut.instance }}
 
    stimulus: process
    begin
